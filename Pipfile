@@ -7,6 +7,9 @@ name = "pypi"
 flask = "*"
 
 [dev-packages]
+pytest = "*"
+pytest-cov = "*"
+pytest-xdist = "*"
 
 [requires]
 python_version = "3.6"

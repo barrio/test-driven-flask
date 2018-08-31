@@ -1,2 +1,4 @@
 .idea/
 Pipfile.lock
+.pytest_cache/
+tests/.coverage
