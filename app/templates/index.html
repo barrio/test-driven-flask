@@ -5,6 +5,15 @@
     <title>Test-driven Flask</title>
 </head>
 <body>
-<h1>Hello test-driven Flask!</h1>
+
+<h1>Hello {% if name %} {{ name }} {% else %} test-driven Flask! {% endif %}</h1>
+
+<form method="post">
+    {{ name_form.hidden_tag() }} <br>
+    {{ name_form.name.label }}   <br>
+    {{ name_form.name() }}       <br>
+    {{ name_form.submit() }}     <br>
+</form>
+
 </body>
 </html>

@@ -1,5 +1,8 @@
+import os
+
+
 class Config:
-    pass
+    SECRET_KEY = os.getenv('SECRET_KEY') or 'hard to guess string'
 
 
 class DevelopmentConfig(Config):
@@ -8,6 +11,7 @@ class DevelopmentConfig(Config):
 
 class TestingConfig(Config):
     TESTING = True
+    WTF_CSRF_ENABLED = False
 
 
 class ProductionConfig(Config):

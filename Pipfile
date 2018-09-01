@@ -5,11 +5,13 @@ name = "pypi"
 
 [packages]
 flask = "*"
+flask-wtf = "*"
 
 [dev-packages]
 pytest = "*"
 pytest-cov = "*"
 pytest-xdist = "*"
+flask-debugtoolbar = "*"
 
 [requires]
 python_version = "3.6"

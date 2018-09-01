@@ -1,4 +1,4 @@
-from flask import current_app
+from flask import current_app, request
 
 
 def test_app_exists(client):
@@ -10,7 +10,13 @@ def test_app_is_testing(client):
 
 
 def test_index_page_is_rendered(client):
-    index = client.get('/')
+    response = client.get('/')
 
-    assert index.status_code == 200
-    assert b'Test-driven Flask' in index.data
+    assert response.status_code == 200
+    assert b'Test-driven Flask' in response.data
+
+
+def test_form_submit(client):
+    response = client.post('/', data={'name': 'Marco'}, follow_redirects=True)
+    assert response.status_code == 200
+    assert b'Marco' in response.data
