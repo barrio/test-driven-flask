@@ -4,12 +4,16 @@ from app import create_app
 
 
 @pytest.fixture(scope='module')
-def client():
-    app = create_app('testing')
-
-    client = app.test_client()
-    context = app.app_context()
+def appl():
+    appl = create_app('testing')
+    context = appl.app_context()
     context.push()
 
-    yield client
+    yield appl
     context.pop()
+
+
+@pytest.fixture(scope='module')
+def client(appl):
+    client = appl.test_client()
+    yield client

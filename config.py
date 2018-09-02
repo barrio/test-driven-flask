@@ -7,6 +7,7 @@ class Config:
 
 class DevelopmentConfig(Config):
     DEBUG = True
+    DEBUG_TB_INTERCEPT_REDIRECTS = False
 
 
 class TestingConfig(Config):
