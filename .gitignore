@@ -5,3 +5,4 @@ tests/.coverage
 *__pycache__*
 testdb
 flask.env
+data-dev.sqlite
