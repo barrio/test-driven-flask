@@ -23,9 +23,17 @@ def test_form_submit(client):
 
 
 def test_session(client):
-    with client:
+    with client:  # Keep request context to access session
         response = client.post('/', data={'name': 'Marco'}, follow_redirects=True)
         assert response.status_code == 200
         assert session['name'] == 'Marco'
+
+
+def test_flash_message(client):
+    response = client.post('/', data={'name': 'Julian'}, follow_redirects=True)
+    assert b"You changed your name!" not in response.data
+
+    response = client.post('/', data={'name': 'Marco'}, follow_redirects=True)
+    assert b"You changed your name!" in response.data
 
 
