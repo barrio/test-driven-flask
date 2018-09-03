@@ -2,3 +2,6 @@
 Pipfile.lock
 .pytest_cache/
 tests/.coverage
+*__pycache__*
+testdb
+flask.env

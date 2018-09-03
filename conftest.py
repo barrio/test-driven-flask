@@ -1,3 +1,4 @@
+from flask import session
 import pytest
 
 from app import create_app
